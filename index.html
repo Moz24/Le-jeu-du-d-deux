@@ -11,14 +11,15 @@
     <link rel="icon" type="image/x-icon" href="ressources/images/favicon.ico">
     <link rel="stylesheet" href="css/bulma.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
 </head>
 <body>
     
     <header class="column is-flex is-justify-content-space-between is-align-items-center">
             <img src="ressources/images/logo.svg" alt="Logo du jeu de dé" width="162" height="52">
-            <a href="" class="new-game button is-primary is-normal">NOUVELLE PARTIE</a>
+            <a href="" class="new-game button is-normal"><i class="fas fa-circle-plus mr-2"></i>NEW GAME</a>
     </header>
-   
+
     <main class="column pt-0">
         <div class="border-bottom"></div>
 
@@ -27,14 +28,12 @@
             <div class="border-bottom is-hidden-tablet"></div>
         </div>
 
-        
         <div class="dice has-text-centered">
             <img src="ressources/images/dices/dice2.svg" alt="image du dé" width="78" height="78">
         </div>
 
 
         <section class="block-player">
-
             <div class=" block-player1 column is-flex is-flex-direction-column is-justify-content-space-between">
                 <h1 class="title is-1 has-text-centered mb-0">Joueur 1</h1>
                 <div class="block-global-score">
@@ -59,14 +58,10 @@
                 </div>
             </div>
 
-
-            
-            <div class="buttons-action column is-flex is-align-items-center">
-                <a href="" class="btn-hold button is-primary is-medium container">COLLECTER</a>
-                <a href="" class="btn-lancer button is-primary is-medium container">LANCER</a>
+            <div class="buttons-action column is-flex is-align-items-center">  
+                <a href="" class="btn-hold button container"><i class="fas fa-upload mr-2"></i>COLLECTER</a>
+                <a href="" class="btn-lancer button container"><i class="fas fa-sync-alt mr-2"></i>LANCER</a>
             </div>
-
-
         </section>
 
     </main>
