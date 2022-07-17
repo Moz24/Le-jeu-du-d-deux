@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le jeu du dé à deux</title>
+    <meta name="description" content="Défiez un ami au jeu du dé">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="ressources/images/favicon.ico">
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+    
+    <header class="column is-flex is-justify-content-space-between is-align-items-center">
+            <img src="ressources/images/logo.svg" alt="Logo du jeu de dé" width="162" height="52">
+            <a href="" class="new-game button is-normal"><i class="fas fa-circle-plus mr-2"></i>NEW GAME</a>
+    </header>
+
+    <main class="column pt-0">
+        <div class="border-bottom"></div>
+
+        <div class="score-other-player is-hidden-tablet has-text-centered">
+            <p class="text-light mb-1">Score de l'autre joueur : <span>35</span></p>
+            <div class="border-bottom is-hidden-tablet"></div>
+        </div>
+
+        <div class="dice has-text-centered">
+            <img src="ressources/images/dices/dice2.svg" alt="image du dé" width="78" height="78">
+        </div>
+
+
+        <section class="block-player">
+            <div class=" block-player1 column is-flex is-flex-direction-column is-justify-content-space-between">
+                <h1 class="title is-1 has-text-centered mb-0">Joueur 1</h1>
+                <div class="block-global-score">
+                    <p class="title is-4 has-text-centered has-text-grey mb-0">Score global</p>
+                    <p class="global-score has-text-centered mb-0">43</p>
+                </div>
+                <div class="block-round-score">
+                    <p class="round-score title is-2 has-text-centered mb-2">12</p>
+                    <p class="title is-4 has-text-centered">Score actuel</p>
+                </div>
+            </div>
+
+            <div class="block-player2 column is-flex is-flex-direction-column is-justify-content-space-between">
+                <h1 class="title is-1 has-text-centered mb-0">Joueur 2</h1>
+                <div class="block-global-score">
+                    <p class="title is-4 has-text-centered has-text-grey mb-0">Score global</p>
+                    <p class="global-score has-text-centered mb-0">35</p>
+                </div>
+                <div class="block-round-score">
+                    <p class="round-score title is-2 has-text-centered mb-2">0</p>
+                    <p class="title is-4 has-text-centered">Score actuel</p>
+                </div>
+            </div>
+
+            <div class="buttons-action column is-flex is-align-items-center">  
+                <a href="" class="btn-hold button container"><i class="fas fa-upload mr-2"></i>COLLECTER</a>
+                <a href="" class="btn-lancer button container"><i class="fas fa-sync-alt mr-2"></i>LANCER</a>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
