@@ -1,0 +1,13 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30">
+	<title>dice-svg</title>
+	<style>
+		.s0 { fill: #d7263d } 
+		.s1 { fill: none;stroke: #000000;stroke-linejoin: round;stroke-width: 2 } 
+		.s2 { fill: #ffffff;stroke: #000000;stroke-linejoin: round;stroke-width: 2 } 
+	</style>
+	<path id="Layer copy 2" class="s0" d="m1 8.8c0-4.5 3.6-8.1 8-8.1h12c4.4 0.1 8 3.6 8 8.1v11.2c0 4.4-3.6 8-8 8h-12c-4.4 0-8-3.6-8-8z"/>
+	<path id="Layer" class="s1" d="m1 9c0-4.4 3.6-8 8-8h12c4.4 0 8 3.6 8 8v12c0 4.4-3.6 8-8 8h-12c-4.4 0-8-3.6-8-8z"/>
+	<g id="Dice 1">
+		<path id="Layer copy" class="s2" d="m14.9 18.3c-1.8 0-3.3-1.5-3.3-3.4 0-1.8 1.5-3.3 3.3-3.3 1.9 0 3.4 1.5 3.4 3.3 0 1.9-1.5 3.4-3.4 3.4z"/>
+	</g>
+</svg>
