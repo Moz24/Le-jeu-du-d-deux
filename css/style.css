@@ -1,17 +1,16 @@
 *, ::before, ::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Lato', Helvetica, sans-serif; }
 .border-bottom { border-bottom: 1px solid #d0d0d0; margin: 0px -10px 0;}
-.text-light { font-size: 22px; color: #A0A0A0; }
+.text-light { font-size: 18px; color: #A0A0A0; }
 
-/* Custom buttons */
-.button { border-radius: 50px; height: 48px;}
+/* Personalisation des boutons */
+.button { border-radius: 50px; height: 48px; border-width: inherit;}
 .new-game, .btn-hold { background-color: #5F54A0; color: #FFF;}
 .new-game:hover, .btn-hold:hover { background-color: #584D93; color: #FFF;}
 .btn-lancer { background-color: #1B998B; color: #FFF;}
 .btn-lancer:hover { background-color: #188B7D; color: #FFF;}
 
-
-/* Informations player */ 
+/* Informations joueur */ 
 .block-player{
     position: relative;
     top: 0px;
@@ -19,19 +18,14 @@ body { font-family: 'Lato', Helvetica, sans-serif; }
     min-height: 335px;
     width: 100%;
 }
-.block-player1 {
-    border: 5px solid #d0d0d0;
+.block-player1, .block-player2 {
     position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
 }
-.block-player2 {
-    position: absolute;
-    border: 5px solid #d0d0d0;
-    height: 100%;
-    width: 100%;
-    left: calc(-100% - 12px);
-}
+
 .global-score { color: #5F54A0; font-size: 82px; font-weight: 900;}
 .block-round-score { background: #D7263D; padding: 10px 36px; align-self: center; border-radius: 10px;}
 .block-round-score p { color: #FFF; }
@@ -48,7 +42,7 @@ body { font-family: 'Lato', Helvetica, sans-serif; }
     border-top: 1px solid #d0d0d0; 
 }
 
-/* Custom information player & block action for tablet and desktop*/
+/* Position des blocks joueur et du bloc action sur tablette et pc */ 
 @media screen and (min-width: 769px) {
     .block-player{
         height: calc(100vh - 192px - 80px) ;
@@ -64,9 +58,7 @@ body { font-family: 'Lato', Helvetica, sans-serif; }
         min-height: 370px;
         flex-grow: 3;
     }
-    .block-player1 {
-        order: -2;
-    }
+    .block-player1 { order: -2; }
     .buttons-action {
         border-top: none; 
         position: static;
@@ -77,13 +69,8 @@ body { font-family: 'Lato', Helvetica, sans-serif; }
     }
 }
 
-/* Dice */
-.dice {
-    margin: 12px 0;
-    max-height: 78px;
-}
-
-/* Position dice bottom windows for tablet and desktop */
+.dice { margin: 12px 0; max-height: 78px; }
+/* Position du dé en bas de l'écran sur tablette et pc */
 @media screen and (min-width: 769px) {
     .dice {
         position: fixed;
@@ -101,9 +88,58 @@ body { font-family: 'Lato', Helvetica, sans-serif; }
     }
 }
 
-/*  Fix display bug for size XS mobile */
+/*  Fix bug affichage sur petit écran */
 @media screen and (max-width: 362px) {
     .buttons-action i, .new-game i{
         display: none;
     }
 }
+
+/* Animation lorsqu'on lance le dé */
+@keyframes animationDice {
+    25% { transform: translateX(calc(50vw - 39px));}
+    75% { transform: translateX(calc(-50vw + 39px)); }
+    100% { transform: translateX(0); }
+}
+.animation-dice{
+    animation-name: animationDice;
+    animation-duration: 2500ms;
+    animation-timing-function: ease;
+}
+
+/* Animation qui agrandi*/
+@keyframes scaleIn {
+	0% { transform: scale(0); }
+	100% { transform: scale(1);}
+}
+
+/* Affichage du score actuel total */ 
+.add-score-dice { animation: scaleIn 1s ease 0s 1 normal forwards; }
+
+/* Style du block joueur suivant s'il peut joueur ou pas */ 
+@media screen and (max-width: 768px) {
+    .actif {
+        border: 10px solid #B2CC3E;
+        background: #c5d86e1c;
+        animation: scaleIn 1s ease 0s 1 normal forwards;
+    }
+    .inactif {
+        border: 10px solid #d0d0d0;
+        opacity: 0;
+        z-index: -10000;       
+    }
+}
+@media screen and (min-width: 769px) {
+    .actif { border: 10px solid #B2CC3E; background: #c5d86e1c; }
+    .inactif {
+        border: 10px solid #d0d0d0;
+        opacity: 0.6;
+        transform: scale(0.7);
+    }
+}
+
+/* Fait disparaitre l'élément par la gauche */
+@keyframes outLeft {
+    100% { transform: translateX(-100%); }
+}
+.out-left { animation: outLeft 500ms linear 0s 1 normal forwards; }

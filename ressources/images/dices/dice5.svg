@@ -1,0 +1,17 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30">
+	<title>dice-svg</title>
+	<style>
+		.s0 { fill: #d2e5ea } 
+		.s1 { fill: none;stroke: #000000;stroke-linejoin: round;stroke-width: 2 } 
+		.s2 { fill: #f46036;stroke: #000000;stroke-linejoin: round;stroke-width: 2 } 
+	</style>
+	<path id="Layer" class="s0" d="m1 8.8c0-4.5 3.6-8.1 8-8.1h12c4.4 0.1 8 3.6 8 8.1v11.2c0 4.4-3.6 8-8 8h-12c-4.4 0-8-3.6-8-8z"/>
+	<path id="Layer" class="s1" d="m1 9c0-4.4 3.6-8 8-8h12c4.4 0 8 3.6 8 8v12c0 4.4-3.6 8-8 8h-12c-4.4 0-8-3.6-8-8z"/>
+	<g id="Dice 5">
+		<path id="Layer" class="s2" d="m15.2 17.5c-1.7 0-3.2-1.5-3.2-3.3 0-1.7 1.5-3.2 3.2-3.2 1.8 0 3.3 1.5 3.3 3.2 0 1.8-1.5 3.3-3.3 3.3z"/>
+		<path id="Layer copy 8" class="s2" d="m8.8 25c-1.8 0-3.3-1.5-3.3-3.2 0-1.8 1.5-3.3 3.3-3.3 1.7 0 3.2 1.5 3.2 3.3 0 1.7-1.5 3.2-3.2 3.2z"/>
+		<path id="Layer copy 7" class="s2" d="m21.8 25c-1.8 0-3.3-1.5-3.3-3.2 0-1.8 1.5-3.3 3.3-3.3 1.7 0 3.2 1.5 3.2 3.3 0 1.7-1.5 3.2-3.2 3.2z"/>
+		<path id="Layer copy 3" class="s2" d="m22 11.2c-1.7 0-3.2-1.4-3.2-3.2 0-1.7 1.5-3.2 3.2-3.2 1.8 0 3.2 1.5 3.2 3.2 0 1.8-1.4 3.2-3.2 3.2z"/>
+		<path id="Layer copy 6" class="s2" d="m8.2 11.4c-1.8 0-3.2-1.4-3.2-3.2 0-1.8 1.4-3.2 3.2-3.2 1.8 0 3.2 1.4 3.2 3.2 0 1.8-1.4 3.2-3.2 3.2z"/>
+	</g>
+</svg>
