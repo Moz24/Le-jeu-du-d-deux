@@ -79,84 +79,11 @@ body { font-family: 'Lato', Helvetica, sans-serif; }
 
 /* Animation lorsqu'on lance le dé */
 @keyframes animationDice {
-    0% { 
-        transform: translateX(calc(0));
-        -webkit-transform: translateX(calc(0));
-    }
-    25% { 
-        transform: translateX(calc(50vw - 39px));
-        -webkit-transform: translateX(calc(50vw - 39px));
-    }
-    75% { 
-        transform: translateX(calc(-50vw + 39px)); 
-        -webkit-transform: translateX(calc(-50vw + 39px)); 
-    }
-    100% { 
-        transform: translateX(0); 
-        -webkit-transform: translateX(0); 
-    }
+    25% { transform: translateX(calc(50vw - 39px));}
+    75% { transform: translateX(calc(-50vw + 39px)); }
+    100% { transform: translateX(0); }
 }
-@-webkit-keyframes animationDice {
-    0% { 
-        transform: translateX(calc(0));
-        -webkit-transform: translateX(calc(0));
-    }
-    25% { 
-        transform: translateX(calc(50vw - 39px));
-        -webkit-transform: translateX(calc(50vw - 39px));
-    }
-    75% { 
-        transform: translateX(calc(-50vw + 39px)); 
-        -webkit-transform: translateX(calc(-50vw + 39px)); 
-    }
-    100% { 
-        transform: translateX(0); 
-        -webkit-transform: translateX(0); 
-    }
-}
-  @-moz-keyframes animationDice {
-    0% { 
-        transform: translateX(calc(0));
-        -webkit-transform: translateX(calc(0));
-    }
-    25% { 
-        transform: translateX(calc(50vw - 39px));
-        -webkit-transform: translateX(calc(50vw - 39px));
-    }
-    75% { 
-        transform: translateX(calc(-50vw + 39px)); 
-        -webkit-transform: translateX(calc(-50vw + 39px)); 
-    }
-    100% { 
-        transform: translateX(0); 
-        -webkit-transform: translateX(0); 
-    }
-}
-  @-o-keyframes animationDice {
-    0% { 
-        transform: translateX(calc(0));
-        -webkit-transform: translateX(calc(0));
-    }
-    25% { 
-        transform: translateX(calc(50vw - 39px));
-        -webkit-transform: translateX(calc(50vw - 39px));
-    }
-    75% { 
-        transform: translateX(calc(-50vw + 39px)); 
-        -webkit-transform: translateX(calc(-50vw + 39px)); 
-    }
-    100% { 
-        transform: translateX(0); 
-        -webkit-transform: translateX(0); 
-    }
-}
-
-.animation-dice{
-    animation: animationDice 2500ms ease;
-    -webkit-animation: animationDice 2500ms ease;
-    -moz-animation: animationDice 2500ms ease;
-    -o-animation: animationDice 2500ms ease;
-}
+.animation-dice{ animation: animationDice 2000ms ease 0s normal; }
 
 /* Animation qui agrandi*/
 @keyframes scaleIn {
@@ -169,22 +96,22 @@ body { font-family: 'Lato', Helvetica, sans-serif; }
 
 /* Style du block joueur suivant s'il peut joueur ou pas */ 
 @media screen and (max-width: 768px) {
-    .actif {
+    .player-actif {
         border: 10px solid #B2CC3E;
         background: #c5d86e1c;
         animation: scaleIn 1s ease 0s 1 normal forwards;
         position: absolute;
         top: 0;
     }
-    .inactif {
+    .player-inactif {
         border: 10px solid #d0d0d0;
         opacity: 0;
         z-index: -10000;       
     }
 }
 @media screen and (min-width: 769px) {
-    .actif { border: 10px solid #B2CC3E; background: #c5d86e1c; }
-    .inactif {
+    .player-actif { border: 10px solid #B2CC3E; background: #c5d86e1c; }
+    .player-inactif {
         border: 10px solid #d0d0d0;
         opacity: 0.6;
         transform: scale(0.7);
@@ -198,15 +125,14 @@ body { font-family: 'Lato', Helvetica, sans-serif; }
 .out-left { animation: outLeft 500ms linear 0s 1 normal forwards; }
 
 
-
-/*  Fix bug affichage sur petit écran et format paysage sur smartphone*/
+/* Fix bug affichage sur petit écran et format paysage sur smartphone */
 @media screen and (max-width: 362px) {
     .buttons-action i, .new-game i{
         display: none;
     }
 }
 @media screen and (max-height: 600px) and (max-width: 768px) and (min-width: 480px ) {
-    .actif {
+    .player-actif {
         flex-direction: row!important;
         height: 74px;
     }
@@ -235,4 +161,43 @@ body { font-family: 'Lato', Helvetica, sans-serif; }
         width: 54px;
         height: 54px;
     }
+}
+
+/* Effet chargement de la page pour nouvelle partie */
+.m_loader {
+    background-color: #ededed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.loader-mixin {
+    animation: spinAround .5s infinite linear;
+    border: 5px solid #188B7D;
+    border-radius: 9999px;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    display: block;
+    height: 3em;
+    width: 3em;
+    position: relative;
+}
+
+/* Barre de message d'alerte ou d'infor en haut */
+.alert-info {
+    background-color: #5F54A0;
+    color: #FFF;
+    font-size: 18px;
+    padding: 8px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
 }
