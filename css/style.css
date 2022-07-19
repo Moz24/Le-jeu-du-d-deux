@@ -14,18 +14,9 @@ body { font-family: 'Lato', Helvetica, sans-serif; }
 .block-player{
     position: relative;
     width: 100%;
-/*     position: relative;
-    top: 0px;
-    min-height: calc(100vh - (70px + 214px + 12px));
-    width: 100%; */
 }
 .block-player1, .block-player2 {
     width: 100%;
-/*     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%; */
 }
 
 .global-score { color: #5F54A0; font-size: 82px; font-weight: 900;}
@@ -42,31 +33,27 @@ body { font-family: 'Lato', Helvetica, sans-serif; }
     gap: 12px;
     background: #FFF;
     border-top: 1px solid #d0d0d0; 
+    z-index: 1000;
 }
 
 /* Position des blocks joueur et du bloc action sur tablette et pc */ 
 @media screen and (min-width: 769px) {
     .block-player{
-        height: calc(100vh - 192px - 80px) ;
         margin: 40px auto;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 120px;
     }
     .block-player1, .block-player2{
-        position: static;
         max-width: 400px;
-        min-width: 270px;
-        min-height: 370px;
         flex-grow: 3;
     }
-    .block-player1 { order: -2; }
     .buttons-action {
         border-top: none; 
         position: static;
         flex-direction: column;
         gap: 30px;
-        order: -1;
         max-width: 250px;
     }
 }
@@ -78,8 +65,8 @@ body { font-family: 'Lato', Helvetica, sans-serif; }
         position: fixed;
         bottom: 0px;
         width: 100%;
-        height: 120px;
-        max-height: 120px;
+        height: 100px;
+        max-height: 100px;
         border-top: 5px solid #d0d0d0; 
         margin: 0px -10px;
         display: flex;
@@ -90,23 +77,85 @@ body { font-family: 'Lato', Helvetica, sans-serif; }
     }
 }
 
-/*  Fix bug affichage sur petit écran */
-@media screen and (max-width: 362px) {
-    .buttons-action i, .new-game i{
-        display: none;
+/* Animation lorsqu'on lance le dé */
+@keyframes animationDice {
+    0% { 
+        transform: translateX(calc(0));
+        -webkit-transform: translateX(calc(0));
+    }
+    25% { 
+        transform: translateX(calc(50vw - 39px));
+        -webkit-transform: translateX(calc(50vw - 39px));
+    }
+    75% { 
+        transform: translateX(calc(-50vw + 39px)); 
+        -webkit-transform: translateX(calc(-50vw + 39px)); 
+    }
+    100% { 
+        transform: translateX(0); 
+        -webkit-transform: translateX(0); 
+    }
+}
+@-webkit-keyframes animationDice {
+    0% { 
+        transform: translateX(calc(0));
+        -webkit-transform: translateX(calc(0));
+    }
+    25% { 
+        transform: translateX(calc(50vw - 39px));
+        -webkit-transform: translateX(calc(50vw - 39px));
+    }
+    75% { 
+        transform: translateX(calc(-50vw + 39px)); 
+        -webkit-transform: translateX(calc(-50vw + 39px)); 
+    }
+    100% { 
+        transform: translateX(0); 
+        -webkit-transform: translateX(0); 
+    }
+}
+  @-moz-keyframes animationDice {
+    0% { 
+        transform: translateX(calc(0));
+        -webkit-transform: translateX(calc(0));
+    }
+    25% { 
+        transform: translateX(calc(50vw - 39px));
+        -webkit-transform: translateX(calc(50vw - 39px));
+    }
+    75% { 
+        transform: translateX(calc(-50vw + 39px)); 
+        -webkit-transform: translateX(calc(-50vw + 39px)); 
+    }
+    100% { 
+        transform: translateX(0); 
+        -webkit-transform: translateX(0); 
+    }
+}
+  @-o-keyframes animationDice {
+    0% { 
+        transform: translateX(calc(0));
+        -webkit-transform: translateX(calc(0));
+    }
+    25% { 
+        transform: translateX(calc(50vw - 39px));
+        -webkit-transform: translateX(calc(50vw - 39px));
+    }
+    75% { 
+        transform: translateX(calc(-50vw + 39px)); 
+        -webkit-transform: translateX(calc(-50vw + 39px)); 
+    }
+    100% { 
+        transform: translateX(0); 
+        -webkit-transform: translateX(0); 
     }
 }
 
-/* Animation lorsqu'on lance le dé */
-@keyframes animationDice {
-    25% { transform: translateX(calc(50vw - 39px));}
-    75% { transform: translateX(calc(-50vw + 39px)); }
-    100% { transform: translateX(0); }
-}
 .animation-dice{
-    animation-name: animationDice;
-    animation-duration: 2500ms;
-    animation-timing-function: ease;
+    animation: animationDice 2500ms ease;
+    -webkit-animation: animationDice 2500ms ease;
+    -moz-animation: animationDice 2500ms ease;
+    -o-animation: animationDice 2500ms ease;
 }
 
 /* Animation qui agrandi*/
@@ -147,3 +196,43 @@ body { font-family: 'Lato', Helvetica, sans-serif; }
     100% { transform: translateX(-100%); }
 }
 .out-left { animation: outLeft 500ms linear 0s 1 normal forwards; }
+
+
+
+/*  Fix bug affichage sur petit écran et format paysage sur smartphone*/
+@media screen and (max-width: 362px) {
+    .buttons-action i, .new-game i{
+        display: none;
+    }
+}
+@media screen and (max-height: 600px) and (max-width: 768px) and (min-width: 480px ) {
+    .actif {
+        flex-direction: row!important;
+        height: 74px;
+    }
+    .block-player h1 {
+        font-size: 22px!important;
+        text-align: left!important;
+    }
+    .block-round-score, .block-global-score {
+        padding: 2px 36px;
+    }
+    .block-global-score {
+        background-color: #584D93;
+        align-self: center;
+        border-radius: 10px;
+    }
+    .block-global-score p {
+        font-size: 16px!important;
+        color: #FFF!important;
+    }
+
+    .block-round-score p {
+        font-size: 16px!important;
+        margin: 0!important;
+    }
+    .dice img {
+        width: 54px;
+        height: 54px;
+    }
+}
